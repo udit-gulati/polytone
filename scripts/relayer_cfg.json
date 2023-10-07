@@ -1,0 +1,14 @@
+{
+    "umee": {
+        "connection_id": "connection-0",
+        "channel_id": "channel-2",
+        "port_id": "transfer",
+        "client_id": "07-tendermint-0"
+    },
+    "nibiru": {
+        "connection_id": "connection-0",
+        "channel_id": "channel-0",
+        "port_id": "transfer",
+        "client_id": "07-tendermint-3"
+    }
+}

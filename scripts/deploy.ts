@@ -15,6 +15,7 @@ async function run () {
   const nativeDenom = "untrn";  // neutron fee token
   const remoteDenom = "uatom";  // cosmos hub fee token
   const contract_owner = await getAccountByName("account_0");
+  const BLOCK_MAX_GAS = new Number(100_000_000).toString();
 
   // const connectionId = networkConfig.relayers.gaia.connection_id;
   // const interchainAccountName = "remote_account_1";
@@ -64,10 +65,10 @@ async function run () {
   // init note
   const init_note_contract = await note_contract.instantiate(
     {
-      block_max_gas: "8888",
+      block_max_gas: BLOCK_MAX_GAS,
       pair: {
         connection_id: "connection-0",
-        remote_port: "port_id",
+        remote_port: "transfer",
       },
     },
     `Note contract ${runTs}`,
@@ -87,7 +88,7 @@ async function run () {
   // init voice
   const init_voice_contract = await voice_contract.instantiate(
     {
-      block_max_gas: "555",
+      block_max_gas: BLOCK_MAX_GAS,
       proxy_code_id: proxy_contract.codeId,
     },
     `Voice contract ${runTs}`,
